@@ -52,3 +52,5 @@ ENV LD_LIBRARY_PATH "$ANDROID_HOME/emulator/lib64:$ANDROID_HOME/emulator/lib64/q
 # Clean up
 RUN rm /tmp/gradle-${GRADLE_VERSION}-bin.zip \
 && rm /tmp/commandlinetools-${ANNDROID_CMD_LINE_TOOLS}.zip
+
+RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
