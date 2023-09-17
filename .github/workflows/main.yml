@@ -46,13 +46,13 @@ jobs:
           builder: ${{ steps.buildx.outputs.name }}
           platforms: linux/amd64,linux/arm64
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/android-lightweight:latest
-          cache-from: type=registry,ref=${{ secrets.DOCKERHUB_USERNAME }}/android-lightweight:buildcache
-          cache-to: type=registry,ref=${{ secrets.DOCKERHUB_USERNAME }}/android-lightweight:buildcache,mode=max
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/capacitor-android-node:latest
+          cache-from: type=registry,ref=${{ secrets.DOCKERHUB_USERNAME }}/capacitor-android-node:buildcache
+          cache-to: type=registry,ref=${{ secrets.DOCKERHUB_USERNAME }}/capacitor-android-node:buildcache,mode=max
 
       - name: Update repo description
         uses: peter-evans/dockerhub-description@v2
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-          repository: ${{ secrets.DOCKERHUB_USERNAME }}/android-lightweight
+          repository: ${{ secrets.DOCKERHUB_USERNAME }}/capacitor-android-node
